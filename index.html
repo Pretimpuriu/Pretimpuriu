@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="styleSheets/styleMain.css">
+
+<body>
+
+
+    <div class="imgbox">
+        <img id="img" class="center-fit" src='Pics/1 (1).jpg'>
+        <!-- <button id="btn" src="Pics/BUTTON.png" class="btn" onclick="nextPhoto()">Button</button> -->
+        <div style="position: absolute; width: 100%; height: 100%;">
+            <div class="buttonTwo">
+                <img id="btn" style="text-align: center; " height="145" src="Pics/BUTTON.png" onclick="nextPhoto();" />
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    function nextPhoto() {
+        let photos = ["Pics/1 (1).jpg", "Pics/1 (2).jpg", "Pics/1 (3).jpg",
+            "Pics/1 (4).jpg", "Pics/1 (5).jpg", "Pics/1 (6).jpg",
+            "Pics/1 (7).jpg", "Pics/1 (8).jpg", "Pics/1 (9).jpg",
+            "Pics/1 (10).jpg", "Pics/1 (11).jpg", "Pics/1 (12).jpg",
+            "Pics/1 (13).jpg", "Pics/1 (14).jpg", "Pics/1 (15).jpg",
+            "Pics/1 (16).jpg", "Pics/1 (17).jpg", "Pics/1 (18).jpg",
+            "Pics/1 (19).jpg", "Pics/1 (20).jpg",
+        ];
+
+        document.getElementById("img").src = photos[Math.floor(Math.random() * photos.length)];
+
+        document.getElementById("btn").style.visibility = "hidden";
+        showButton();
+
+
+    }
+
+    function showButton() {
+        setTimeout(function() { //using setTimeout function
+            document.getElementById("btn").style.visibility = "visible"; //displaying the button again after 3000ms or 3 seconds
+        }, 2000);
+
+
+    }
+</script>
